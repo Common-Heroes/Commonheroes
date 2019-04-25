@@ -2,14 +2,27 @@ const express = require('express')
 const app = express()
 const port = 3000
 const Login = require('./routes/loginRoute')
-
+const {Provider} = require('./models')
+const ProviderRouter = require('./routes/providerRoute')
 const registerRouter = require("./routes/registerRoute")
 
 app.use(express.urlencoded({extended : false}))
 
 app.get('/', function(req, res){
-    res.render('home.ejs')
+    Provider.findAll()
+        .then(function(read){
+            res.render('home.ejs',{
+                dataProviders : read
+            })
+        })
+        .catch(function(err){
+            console.log(err);
+            
+            res.send(err)
+        })
 })
+
+app.use("/provider", ProviderRouter)
 
 app.use ("/register", registerRouter)
 
