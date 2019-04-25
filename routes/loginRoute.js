@@ -17,12 +17,18 @@ route.post('/', function(req, res){
         where : {
             username : req.body.username,
             password : req.body.password
-        }
+        },
+        // hooks :false
+        // hook: false
     })         
         .then(function(found){
+            console.log (found)
             
             if(found){
-                res.redirect('/')
+                // res.send (found)
+                res.redirect('/profil', {
+                    loginData :found
+                })
             }
             else{
                 res.redirect('/login/?errMsg= wrong username / password')

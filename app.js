@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const Login = require('./routes/loginRoute')
-
 const registerRouter = require("./routes/registerRoute")
+const LoginRouter = require('./routes/loginRoute')
+const profileRouter = require('./routes/profileRoute')
 
 app.use(express.urlencoded({extended : false}))
 
@@ -12,8 +12,8 @@ app.get('/', function(req, res){
 })
 
 app.use ("/register", registerRouter)
-
-app.use('/login', Login)
+app.use('/login', LoginRouter)
+app.use ("/profile", profileRouter)
 
 
 
