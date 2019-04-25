@@ -1,0 +1,61 @@
+[{
+    "name" : "dion motor",
+    "price" : "10000",
+    "address" : "jakarta"
+},{
+    "name" : "enyung jaya",
+    "price" : "5000",
+    "address" : "bandung"
+},{
+    "name" : "wildan taylor",
+    "price" : "50000",
+    "address" : "sumedang"
+},{
+    "name" : "arif tubeless",
+    "price" : "10000",
+    "address" : "solo"
+},{
+    "name" : "max entertainment",
+    "price" : "50000",
+    "address" : "malang"
+},{
+    "name" : "alvin photography",
+    "price" : "15000",
+    "address" : "jogja"
+},{
+    "name" : "ana cell",
+    "price" : "20000",
+    "address" : "bekasi"
+},{
+    "name" : "dedy hikmah jaya",
+    "price" : "15000",
+    "address" : "depok"
+},{
+    "name" : "Denny davidson",
+    "price" : "50000",
+    "address" : "bandung"
+},{
+    "name" : "Elia cell",
+    "price" : "35000",
+    "address" : "jakarta"
+},{
+    "name" : "Mikel sumber motor",
+    "price" : "25000",
+    "address" : "jakarta"
+},{
+    "name" : "Orvin sumber sehat",
+    "price" : "40000",
+    "address" : "bandung"
+},{
+    "name" : "Ovi cell",
+    "price" : "30000",
+    "address" : "malang"
+},{
+    "name" : "Jani entertainment",
+    "price" : "40000",
+    "address" : "aceh"
+},{
+    "name" : "Stephen sumber sehat",
+    "price" : "30000",
+    "address" : "banten"
+}]
