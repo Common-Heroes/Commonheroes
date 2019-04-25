@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       //     console.log(input, cb, '========= inputvalidator')
       //     User.findOne({
       //       where : {
+                  //bedanya disin pake input.username
       //         username : input
       //       }
       //     })
@@ -47,6 +48,7 @@ module.exports = (sequelize, DataTypes) => {
 
     hooks : {
       beforeCreate : function(user){
+        console.log (user)
         const secret = 'commonheroes'
         const hash = crypto.createHmac('sha256', secret)
                            .update(user.password)
@@ -54,10 +56,11 @@ module.exports = (sequelize, DataTypes) => {
         
         user.password = hash
       }
-    
+
       ,beforeFind : function(input){
         console.log('masuk')
         // console.log(input.where.password)
+
         const secret = 'commonheroes'
         const hash = crypto.createHmac('sha256', secret)
                            .update(input.where.password)

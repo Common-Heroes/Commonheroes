@@ -11,7 +11,7 @@ router.get ("/" ,(req,res) => {
 })
 
 router.post ("/add", (req,res) => {
-    let accountData = new User ({
+    User.create ({
         name : req.body.fullName,
         phone : req.body.phoneNumber,
         email : req.body.email,
@@ -19,8 +19,6 @@ router.post ("/add", (req,res) => {
         password : req.body.password,
         balance : req.body.balance
     })
-
-    accountData.save()
         .then (() => {
             res.redirect("/")
         })
