@@ -23,12 +23,12 @@ route.post('/', function(req, res){
     })         
         .then(function(found){
             console.log (found)
-            
             if(found){
+                req.session.userId = found.id
+                // req.session.obj = found.dataValues
+                res.redirect('/') 
                 // res.send (found)
-                res.redirect('/profil', {
-                    loginData :found
-                })
+                // res.redirect('/profil')
             }
             else{
                 res.redirect('/login/?errMsg= wrong username / password')

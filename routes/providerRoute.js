@@ -6,45 +6,62 @@ const {Provider} = require('../models')
 const {ServiceRecord} = require('../models')
 const {Item} = require('../models')
 
+
 route.get('/store/:id', function(req, res){
-    let id = req.params.id
-    Provider.findByPk(id,
-    {hooks : false})
-        .then(function(found){
-            console.log(found)
-            res.render('providers.ejs',{
-                provider : found
+    if(!req.session.userId){
+        res.redirect("/login/")
+    } else {
+    
+        let id = req.params.id
+        Provider.findByPk(id,
+        {hooks : false})
+            .then(function(found){
+                // console.log(found)
+                res.render('providers.ejs',{
+                    provider : found
+                })
             })
-        })
-        .catch(function(err){
-            console.log(err);
-            
-            res.send(err)
-        })
+            .catch(function(err){
+                console.log(err);
+                
+                res.send(err)
+            })
+    }
+    
 })
 
 route.get('/store/:id/addService', function(req, res){
-    let id = req.params.id
-    Provider.findByPk(id,{
-        hooks : false
-    })
-        .then(function(found){
-            console.log(found)
-            res.render('addService.ejs',{
-                provider : found
+    if(!req.session.userId){
+        res.redirect("/login/")
+    } else {
+    
+        let id = req.params.id
+        Provider.findByPk(id,{
+            hooks : false
+        })
+            .then(function(found){
+                console.log(found)
+                res.render('addService.ejs',{
+                    provider : found
+                })
             })
-        })
-        .catch(function(err){
-            console.log(err);
-            
-            res.send(err)
-        })
+            .catch(function(err){
+                console.log(err);
+                
+                res.send(err)
+            })
+    }
 
     
 })
 
 route.post('/store/:id/addService', function(req, res){
-    res.redirect('/')
+    if(!req.session.userId){
+        res.redirect("/login/")
+    } else {
+    
+        res.redirect('/')
+    }
 })
 
 module.exports = route

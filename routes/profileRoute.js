@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const Model = require("../models")
-const Category = Model.Category
 const Item = Model.Item
+const Category = Model.Category
 const Provider = Model.Provider
 const ServiceRecord = Model.ServiceRecord
 
