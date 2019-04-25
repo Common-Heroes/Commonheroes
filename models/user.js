@@ -6,7 +6,15 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     name: DataTypes.STRING,
     phone: DataTypes.STRING,
-    email: DataTypes.STRING,
+    email: {
+      type :DataTypes.STRING,
+      validate : {
+        isEmail : {
+          args :true,
+          msg :"wrong format email !!!"
+        }
+      }
+    },
     balance: DataTypes.INTEGER,
     username: {
       type : DataTypes.STRING,
@@ -29,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     password: DataTypes.STRING
   }, {
+
     hooks : {
       beforeCreate : function(user){
         const secret = 'commonheroes'
