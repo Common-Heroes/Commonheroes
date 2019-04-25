@@ -7,17 +7,15 @@ app.use (session({
     secret : 'commonHeroes',
     cookie: {}
 }))
-
 const {Provider} = require('./models')
 const ProviderRouter = require('./routes/providerRoute')
 const registerRouter = require("./routes/registerRoute")
 const LoginRouter = require('./routes/loginRoute')
 const profileRouter = require('./routes/profileRoute')
-const session = require('express-session')
+
 
 
 app.use (express.urlencoded({extended : false}))
-
 
 
 
