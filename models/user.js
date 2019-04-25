@@ -18,22 +18,29 @@ module.exports = (sequelize, DataTypes) => {
     balance: DataTypes.INTEGER,
     username: {
       type : DataTypes.STRING,
-      validate : {
-        isUnique : function(input, cb){
-          User.findOne({
-            where : {
-              username : input.username
-            }
-          })
-            .then(function(found){
-              if (found) cb('username sudah dipakai')
-              else cb()
-            })
-            .catch(function(err){
-              cb(err)
-            })
-        }
-      }
+      // validate : {
+      //   isUnique : 
+      //     function(input, cb){
+      //     console.log(input, cb, '========= inputvalidator')
+      //     User.findOne({
+      //       where : {
+      //         username : input
+      //       }
+      //     })
+      //       .then(function(found){
+      //         console.log(found)
+      //         if (found) {
+      //           cb('username sudah dipakai')
+      //         }
+      //         else {
+      //           cb()
+      //         }
+      //       })
+      //       .catch(function(err){
+      //         cb(err)
+      //       })
+      //   }
+      // }
     },
     password: DataTypes.STRING
   }, {
@@ -48,13 +55,15 @@ module.exports = (sequelize, DataTypes) => {
         user.password = hash
       }
     
-      ,beforeFind : function(user){
+      ,beforeFind : function(input){
+        console.log('masuk')
+        // console.log(input.where.password)
         const secret = 'commonheroes'
         const hash = crypto.createHmac('sha256', secret)
-                           .update(user.password)
+                           .update(input.where.password)
                            .digest('hex')
-        
-        user.password = hash
+        console.log(hash)
+        input.where.password = hash
       }
       
     }
