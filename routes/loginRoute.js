@@ -17,7 +17,7 @@ route.post('/', function(req, res){
         where : {
             username : req.body.username,
             password : req.body.password
-        },
+        }
         // hooks :false
         // hook: false
     })         
