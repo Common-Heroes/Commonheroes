@@ -11,9 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     ServiceRecord.belongsTo(models.User,{
       foreignKey : 'userId'
     })
-    // ServiceRecord.belongsTo(models.Provider,{
-    //   foreignKey : 'providerId'
-    // })
+    ServiceRecord.belongsTo(models.Provider)
   };
   return ServiceRecord;
 };

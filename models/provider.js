@@ -7,12 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Provider.associate = function(models) {
     // associations can be defined here
-    // Provider.hasMany(models.ServiceRecord, {
-    //   foreignKey : 'providerId'
-    // })
-    // Provider.belongsTo(models.Category, {
-    //   foreignKey : 'providerId'
-    // })
+    Provider.hasMany(models.ServiceRecord)
+    Provider.belongsTo(models.Category)
   };
   return Provider;
 };
