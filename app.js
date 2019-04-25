@@ -4,12 +4,20 @@ const port = 3000
 const Login = require('./routes/loginRoute')
 const {Provider} = require('./models')
 const ProviderRouter = require('./routes/providerRoute')
-
 const registerRouter = require("./routes/registerRoute")
 const LoginRouter = require('./routes/loginRoute')
 const profileRouter = require('./routes/profileRoute')
+const session = require('express-session')
+
 
 app.use(express.urlencoded({extended : false}))
+
+let sess = {
+    secret : "commonheroes",
+    cookie : {}
+}
+
+app.use(session(sess)) 
 
 app.get('/', function(req, res){
     Provider.findAll()
