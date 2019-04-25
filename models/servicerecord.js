@@ -8,6 +8,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   ServiceRecord.associate = function(models) {
     // associations can be defined here
+    ServiceRecord.belongsTo(models.User,{
+      foreignKey : 'userId'
+    })
+    ServiceRecord.belongsTo(models.Provider,{
+      foreignKey : 'providerId'
+    })
   };
   return ServiceRecord;
 };
