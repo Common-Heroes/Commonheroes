@@ -34,7 +34,8 @@ route.post('/', function(req, res){
                 res.redirect('/login/?errMsg= wrong username / password')
             }
         })
-        .catch(function(err){            
+        .catch(function(err){    
+            console.log(err)        
             res.send(err)
         })
 

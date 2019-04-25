@@ -19,17 +19,20 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type : DataTypes.STRING,
       // validate : {
-      //   isUnique : function(input, cb){
-      //     console.log(input)
+      //   isUnique : 
+      //     function(input, cb){
+      //     console.log(input, cb, '========= inputvalidator')
       //     User.findOne({
       //       where : {
-      //         username : input.username
+                  //bedanya disin pake input.username
+      //         username : input
       //       }
       //     })
       //       .then(function(found){
-      //         if (found){
+      //         console.log(found)
+      //         if (found) {
       //           cb('username sudah dipakai')
-      //         } 
+      //         }
       //         else {
       //           cb()
       //         }
@@ -53,17 +56,17 @@ module.exports = (sequelize, DataTypes) => {
         
         user.password = hash
       }
-    
-      ,beforeFind : function(user){
-        console.log(user);
-        
+
+      ,beforeFind : function(input){
+        console.log('masuk')
+        // console.log(input.where.password)
+
         const secret = 'commonheroes'
         const hash = crypto.createHmac('sha256', secret)
-                           .update(user.password)
+                           .update(input.where.password)
                            .digest('hex')
-        
-        user.password = hash
-        console.log (user.password)
+        console.log(hash)
+        input.where.password = hash
       }
       
     }

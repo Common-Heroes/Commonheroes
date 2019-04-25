@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>COMMON HEROES</title>
+    <title><%= provider.name %></title>
     <style>
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
-            width: 30%;
+            width: 100%;
         }
         
         td, th {
@@ -24,30 +24,25 @@
     </style>
 </head>
 <body>
-    <button><a href="/">COMMON HEROES</a></button>
-
-    <button><a href="/register">REGISTER</a></button>
-    <button><a href="/login">LOGIN</a></button>
-
-    <button><a href="/profile">PROFILE</a></button>
- 
     <table>
         <tr>
-            
-            <th>OUR PARTNERS</th>
-           
+            <th>ID</th>
+            <th>name</th>
+            <th>price</th>
+            <th>address</th>
+            <th></th>
         </tr>
-        <% dataProviders.forEach(function(provider){ %>
-            <tr>
-                
-                <td><a href="/provider/store/<%= provider.id %>"><%= provider.name %></a></td>
-                
-                
-                
-            </tr>
-        <% }) %>
+        <tr>
+            <td> <%= provider.id %> </td>
+            <td> <%= provider.name %> </td>
+            <td> <%= provider.price %> </td>
+            <td> <%= provider.address %> </td>
+            <td>
+                <button>
+                    <a href="/provider/store/<%= provider.id %>/addService">SERVICE AN ITEM !</a>
+                </button>
+            </td>
+        </tr>
     </table>
-
-
 </body>
 </html>
