@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const Login = require('./routes/loginRoute')
 
 const registerRouter = require("./routes/registerRoute")
 
@@ -11,6 +12,10 @@ app.get('/', function(req, res){
 })
 
 app.use ("/register", registerRouter)
+
+app.use('/login', Login)
+
+
 
 
 
