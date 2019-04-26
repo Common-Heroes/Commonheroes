@@ -8,6 +8,7 @@ app.use (session({
     cookie: {}
 }))
 const {Provider} = require('./models')
+const {Category} = require('./models')
 const ProviderRouter = require('./routes/providerRoute')
 const registerRouter = require("./routes/registerRoute")
 const LoginRouter = require('./routes/loginRoute')
@@ -31,9 +32,14 @@ app.get('/', function(req, res){
         res.redirect("/login/")
     }
     else{
-        console.log (req.session)
-        Provider.findAll()
+        console.log (req.session.userId)
+        Provider.findAll({
+            include : [{
+                model : Category
+            }]
+        })
             .then(function(read){
+                console.log(read[0].Category)
                 res.render('home.ejs',{
                     dataProviders : read
                 })
