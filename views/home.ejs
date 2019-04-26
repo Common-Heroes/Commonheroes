@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/basicTheme.ejs %>
     <title>COMMON HEROES</title>
     <style>
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 30%;
+            float:right
         }
         
         td, th {
@@ -24,13 +26,8 @@
     </style>
 </head>
 <body>
-    <button><a href="/">COMMON HEROES</a></button>
-
-    <button><a href="/register">REGISTER</a></button>
-    <button><a href="/login">LOGIN</a></button>
-
-    <button><a href="/profile">PROFILE</a></button>
- 
+    <% include partials/navbar %>
+    
     <table>
         <tr>
             

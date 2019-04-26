@@ -7,6 +7,7 @@ app.use (session({
     secret : 'commonHeroes',
     cookie: {}
 }))
+
 const {Provider} = require('./models')
 const ProviderRouter = require('./routes/providerRoute')
 const registerRouter = require("./routes/registerRoute")
@@ -16,8 +17,6 @@ const profileRouter = require('./routes/profileRoute')
 
 
 app.use (express.urlencoded({extended : false}))
-
-
 
 let sess = {
     secret : "commonheroes",
@@ -31,7 +30,7 @@ app.get('/', function(req, res){
         res.redirect("/login/")
     }
     else{
-        console.log (req.session)
+        // console.log (req.session)
         Provider.findAll()
             .then(function(read){
                 res.render('home.ejs',{

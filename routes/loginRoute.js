@@ -22,7 +22,7 @@ route.post('/', function(req, res){
         // hook: false
     })         
         .then(function(found){
-            console.log (found)
+            // console.log (found.name,'===================')
             if(found){
                 req.session.userId = found.id
                 // req.session.obj = found.dataValues
@@ -35,7 +35,7 @@ route.post('/', function(req, res){
             }
         })
         .catch(function(err){    
-            console.log(err)        
+            // console.log(err)        
             res.send(err)
         })
 
