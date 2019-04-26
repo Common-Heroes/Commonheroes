@@ -24,7 +24,7 @@ route.get('/store/:id', function(req, res){
                 })
             })
             .catch(function(err){
-                console.log(err);
+                // console.log(err);
                 
                 res.send(err)
             })

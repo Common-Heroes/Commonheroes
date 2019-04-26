@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>My profile</h2>
+
+    name,phone ,email, balance
+    <br>
+    <%= userData.id %> <br>
+    <%= userData.name %> <br>
+    <%= userData.phone %> <br>
+    <%= userData.email %> <br>
+    <%= userData.balance %> <br>
+        
+
+    <h4>fill the form</h4>
+    <form action="/profile/edit" method="POST">
+        <label for="name"> Name : </label>
+        <input type="text" name="name" placeholder="<%= userData.name %>">
+        
+        <label for="email"> Email : </label>
+        <input type="email" name="email" placeholder="<%= userData.email %>">
+        
+        <label for="phoneNumber"> Phone : </label>
+        <input type="text" name="phoneNumber" placeholder="<%= userData.phone %>">
+
+        <button type="submit"> edit </button>
+    </form>
+    <button><a href="/profile"> back </a></button>
+    <button> <a href="/profile/delete" onclick="return confirm('are you sure?')" > delete </a></button>
+</body>
+</html>

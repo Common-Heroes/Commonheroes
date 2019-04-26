@@ -4,9 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% include partials/registerFormStyle %>
+    <% include partials/basicTheme.ejs %>
     <title>COMMONHEROES</title>
 </head>
 <body>
+    <% include partials/navbar %>
     <form action="/register/add" method="POST" >
         <div class="container">
           <h1>Register</h1>
@@ -22,13 +24,13 @@
           <input type="password" placeholder="password" name="password" required><br>
 
           <label for="phoneNumber"><b> Phone Number : </b></label>
-          <input type="string" placeholder="phone number" name="phoneNumber" required><br>
+          <input type="text" placeholder="phone number" name="phoneNumber" required><br>
           
           <label for="email"><b> Email : </b></label>
           <input type="email" placeholder="email" name="email" required><br>
           
           <label for="balance"><b> Balance : </b></label>
-          <input type="string" placeholder="balance" name="balance" required><br>
+          <input type="text" placeholder="balance" name="balance" required><br>
           
           <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
       

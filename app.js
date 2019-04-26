@@ -7,6 +7,7 @@ app.use (session({
     secret : 'commonHeroes',
     cookie: {}
 }))
+
 const {Provider} = require('./models')
 const {Category} = require('./models')
 const ProviderRouter = require('./routes/providerRoute')
@@ -17,8 +18,6 @@ const profileRouter = require('./routes/profileRoute')
 
 
 app.use (express.urlencoded({extended : false}))
-
-
 
 let sess = {
     secret : "commonheroes",
@@ -32,13 +31,15 @@ app.get('/', function(req, res){
         res.redirect("/login/")
     }
     else{
+
         console.log (req.session.userId)
         Provider.findAll({
             include : [{
                 model : Category
             }]
         })
-            .then(function(read){
+
+          .then(function(read){
                 console.log(read[0].Category)
                 res.render('home.ejs',{
                     dataProviders : read

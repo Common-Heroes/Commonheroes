@@ -3,23 +3,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table{
+            border: 1px solid black;
+            
+        }
+        tr {
+            border: 1px solid black;
+            
+        }
+        td {
+            border: 1px solid black;
+            
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <h1>ini dia </h1>
+    <h1>List Item </h1>
 
     <table>
-
-            <% userItem.forEach (item => { %>
+            <tr>
+                <th>No.</th>
+                <th>Item</th>
+                <th>Status</th>
+            </tr>
+            <% userItem.forEach ((item,index) => { %>
                 <tr>
-                    <td> <%= item.id %> </td> 
+                    <td> <%= index+1 %>. </td> 
                     <td> <%= item.name %> </td>
                     <td> <%= item.status %> </td>
                 </tr>
                 
             <% }) %> 
         
-    </table>
-
+    </table><br>
+    
+    <button><a href="/profile"> profile </a></button>
 </body>
 </html>

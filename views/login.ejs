@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/basicTheme.ejs %>
     <title>COMMON HEROES</title>
 </head>
 <body>
+        <% include partials/navbar %>
+
     <h3>LOGIN USER</h3>
     <h2> <%= error %> </h2>
     <form action="/login/" method="POST">
@@ -18,5 +21,7 @@
     
         <button> LOGIN </button>
     </form>
+
+    <button><a href="/register"> daftar </a></button>
 </body>
 </html>
