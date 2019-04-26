@@ -8,9 +8,16 @@
 </head>
 <body>
     <h3>SERVICE AN ITEM AT <%= provider.name %> </h3>
+    <h4 style="color : red"><%= msg %></h4>
     <h5>yours item</h5>
-    <select name="" id=""></select>
-    <form action="" method="POST">
+    <form action="/provider/store/ <%= provider.id %>/addService" method="POST">
+        <select name="item" >
+            <% listItem.forEach(function(item){ %>
+                <option value="<%= item.id %>">
+                    <%= item.name %>
+                </option>
+            <% }) %>
+        </select>
         <button type="submit">
             SERVICE NOW !
         </button>

@@ -29,15 +29,18 @@
     <% include partials/navbar %>
     
     <table>
+        <h2>OUR PARTNERS</h2>
         <tr>
             
-            <th>OUR PARTNERS</th>
+            <th>STORE</th>
+            <th>Category</th>
            
         </tr>
         <% dataProviders.forEach(function(provider){ %>
             <tr>
                 
                 <td><a href="/provider/store/<%= provider.id %>"><%= provider.name %></a></td>
+                <td> <%= provider.Category.name %> </td>
                 
                 
                 
