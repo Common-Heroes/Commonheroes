@@ -1,61 +1,76 @@
 [{
     "name" : "dion motor",
     "price" : "10000",
-    "address" : "jakarta"
+    "address" : "jakarta",
+    "CategoryId" : 2
 },{
     "name" : "enyung jaya",
     "price" : "5000",
-    "address" : "bandung"
+    "address" : "bandung",
+    "CategoryId" : 7
 },{
     "name" : "wildan taylor",
     "price" : "50000",
-    "address" : "sumedang"
+    "address" : "sumedang",
+    "CategoryId" : 3
 },{
     "name" : "arif tubeless",
     "price" : "10000",
-    "address" : "solo"
+    "address" : "solo",
+    "CategoryId" : 2
 },{
     "name" : "max entertainment",
     "price" : "50000",
-    "address" : "malang"
+    "address" : "malang",
+    "CategoryId" : 6
 },{
     "name" : "alvin photography",
     "price" : "15000",
-    "address" : "jogja"
+    "address" : "jogja",
+    "CategoryId" : 6
 },{
     "name" : "ana cell",
     "price" : "20000",
-    "address" : "bekasi"
+    "address" : "bekasi",
+    "CategoryId" : 4
 },{
     "name" : "dedy hikmah jaya",
     "price" : "15000",
-    "address" : "depok"
+    "address" : "depok",
+    "CategoryId" : 7
 },{
     "name" : "Denny davidson",
     "price" : "50000",
-    "address" : "bandung"
+    "address" : "bandung",
+    "CategoryId" : 2
 },{
     "name" : "Elia cell",
     "price" : "35000",
-    "address" : "jakarta"
+    "address" : "jakarta",
+    "CategoryId" : 4
 },{
     "name" : "Mikel sumber motor",
     "price" : "25000",
-    "address" : "jakarta"
+    "address" : "jakarta",
+    "CategoryId" : 2
 },{
     "name" : "Orvin sumber sehat",
     "price" : "40000",
-    "address" : "bandung"
+    "address" : "bandung",
+    "CategoryId" : 5
 },{
     "name" : "Ovi cell",
     "price" : "30000",
-    "address" : "malang"
+    "address" : "malang",
+    "CategoryId" : 4
 },{
     "name" : "Jani entertainment",
     "price" : "40000",
-    "address" : "aceh"
+    "address" : "aceh",
+    "CategoryId" : 6
 },{
     "name" : "Stephen sumber sehat",
     "price" : "30000",
-    "address" : "banten"
+    "address" : "banten",
+    "CategoryId" : 5
 }]
